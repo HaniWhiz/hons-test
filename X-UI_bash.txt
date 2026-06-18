@@ -1,0 +1,25 @@
+wget https://github.com/MHSanaei/3x-ui/releases/download/v2.8.11/x-ui-linux-amd64.tar.gz
+
+tar -zxvf /root/x-ui-linux-amd64.tar.gz -C /usr/local/
+
+cd /usr/local/x-ui/
+chmod +x x-ui x-ui.sh bin/xray-linux-amd64
+
+cp /usr/local/x-ui/x-ui.sh /usr/bin/x-ui
+chmod +x /usr/bin/x-ui
+
+
+cp /usr/local/x-ui/x-ui.service.debian /etc/systemd/system/x-ui.service
+
+systemctl daemon-reload
+systemctl enable x-ui
+systemctl start x-ui
+
+x-ui
+6
+y
+admin
+Aa@12345
+n
+
+!
